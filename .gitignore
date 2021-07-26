@@ -2,6 +2,8 @@
 node_modules
 /dist
 ignore/
+/ignore/
+.ignore
 
 
 # local env fi

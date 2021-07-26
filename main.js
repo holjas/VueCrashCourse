@@ -1,18 +1,17 @@
 const app = Vue.createApp({
   data() {
     return {
-      cart: [],
-      premium: true,
-      details: "I AM DETAILS, I AM GLOBAL",
+      details: [],
     };
   },
-  methods: {
-    updateCart(id) {
-      //   this.cart += 1;
-      this.cart.push(id);
-    },
-    removeCart(id) {
-      this.cart.pop();
-    },
+  created() {
+    fetch("./response.json")
+      .then((res) => res.json())
+      //   .then((res) => console.log(res.results))
+      .then((data) => (this.details = data.results));
+
+    console.log(this.details);
   },
+
+  methods: {},
 });

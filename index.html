@@ -19,22 +19,8 @@
     <div id="app">
       <div class="container">
         <h1 class="display-1 text-center">pretty photos 📸</h1>
-        <nav class="navbar navbar-light bg-light">
-          <div class="container-fluid">
-            <form class="d-flex" @submit.prevent="onSubmit">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                v-model="searchTerm"
-              />
-              <button class="btn btn-outline-primary" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </nav>
+
+        <search-bar></search-bar>
 
         <div class="d-flex justify-content-around flex-wrap mt-3">
           <art-details :details="details"></art-details>
@@ -52,6 +38,7 @@
     <script src="./main.js"></script>
     <!-- Import Components -->
     <script src="components/ArtDetails.js"></script>
+    <script src="components/SearchBar.js"></script>
 
     <!-- Mount App -->
     <script>

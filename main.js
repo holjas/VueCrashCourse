@@ -5,15 +5,16 @@ const app = Vue.createApp({
       searchTerm: "",
     };
   },
-  //   mounted() {
-  //     this.fetchCatalogue("city");
-  //   },
-  //   LOCAL DATA -------------------------
   mounted() {
-    fetch("./response.json")
-      .then((res) => res.json())
-      .then((data) => (this.details = data.results));
+    this.fetchCatalogue("city");
   },
+  //   LOCAL DATA START -------------------------
+  //   mounted() {
+  //     fetch("./response.json")
+  //       .then((res) => res.json())
+  //       .then((data) => (this.details = data.results));
+  //   },
+  //   LOCAL DATA END -------------------------
   methods: {
     fetchCatalogue(imageSearch) {
       const url = new URL("https://api.unsplash.com/search/photos/");
@@ -28,9 +29,7 @@ const app = Vue.createApp({
         .then((data) => (this.details = data.results));
     },
     addSearchTerm(term) {
-      console.log("YOU EMITTED THE SUBMIT");
-      console.log("your term is ", term);
-      //   this.fetchCatalogue(term);
+      this.fetchCatalogue(term);
     },
   },
 });

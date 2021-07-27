@@ -21,12 +21,13 @@
         <h1 class="display-1 text-center">pretty photos 📸</h1>
         <nav class="navbar navbar-light bg-light">
           <div class="container-fluid">
-            <form class="d-flex">
+            <form class="d-flex" @submit.prevent="onSubmit">
               <input
                 class="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                v-model="searchTerm"
               />
               <button class="btn btn-outline-primary" type="submit">
                 Search

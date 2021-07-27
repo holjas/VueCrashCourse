@@ -27,8 +27,10 @@ const app = Vue.createApp({
         .then((response) => response.json())
         .then((data) => (this.details = data.results));
     },
-    onSubmit() {
-      this.fetchCatalogue(this.searchTerm);
+    addSearchTerm(term) {
+      console.log("YOU EMITTED THE SUBMIT");
+      console.log("your term is ", term);
+      //   this.fetchCatalogue(term);
     },
   },
 });

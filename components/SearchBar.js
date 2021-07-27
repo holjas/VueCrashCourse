@@ -24,8 +24,7 @@ app.component("search-bar", {
     `,
   methods: {
     onSubmit() {
-      console.log("let's emit");
-      this.$emit("", this.searchTerm);
+      this.$emit("add-search-term", this.searchTerm);
     },
   },
 });

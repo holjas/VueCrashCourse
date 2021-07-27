@@ -20,7 +20,7 @@
       <div class="container">
         <h1 class="display-1 text-center">pretty photos 📸</h1>
 
-        <search-bar></search-bar>
+        <search-bar @add-search-term="addSearchTerm"></search-bar>
 
         <div class="d-flex justify-content-around flex-wrap mt-3">
           <art-details :details="details"></art-details>
